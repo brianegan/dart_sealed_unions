@@ -10,21 +10,11 @@ class Union0First<T> implements Union0<T> {
 
   @override
   void continued(Consumer<T> continuationFirst) {
-    try {
-      continuationFirst(_value);
-    } on Exception catch (e) {
-      rethrow;
-    }
+    continuationFirst(_value);
   }
 
   @override
-  R join<R>(Func1<R, T> mapFirst) {
-    try {
-      return mapFirst(_value);
-    } on Exception catch (e) {
-      rethrow;
-    }
-  }
+  R join<R>(Func1<R, T> mapFirst) => mapFirst(_value);
 
   @override
   bool operator ==(Object other) =>
