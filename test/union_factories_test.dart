@@ -20,10 +20,10 @@ const List<String>VALID_ARRAY = const[
 
 final Func1<String, int> VALUE = ([a]) => VALID;
 final Func1<String, int> EMPTY = ([a]) => INVALID;
-final Consumer<int> SUCCESS = ([i])=>{};
+final Consumer<int> SUCCESS = ([i]) => "Success";
 final Consumer<int> ERROR = ([i]) => new StateError("");
 
-main() {
+void main() {
 
   group('Union Factories => test join ', () {
     Nullet<int> nullet = new Nullet();
